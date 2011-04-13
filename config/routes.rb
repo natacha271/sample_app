@@ -1,8 +1,13 @@
 SampleApp::Application.routes.draw do
+  get "users/new"
+
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
   match '/help',    :to => 'pages#help'
+  match '/signup', :to => 'users#new'
+
   match 'pages/:action', :controller => 'pages' 
+
  # root :to => "welcome#index"
 
   root :to => 'pages#home'
